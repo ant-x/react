@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello JSX + ES6</title>
+  <script src="//cdn.bootcss.com/react/15.2.1/react.js"></script>
+  <script src="//cdn.bootcss.com/react/15.2.1/react-dom.js"></script>
+  <script src="//cdn.bootcss.com/babel-core/5.8.34/browser.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+  class MySpan extends React.Component {
+    constructor() {
+      super();
+      this.state = { name: 'MySpan' };
+    }
+    render() {
+      return <span onClick={ this.click } >
+          Hello {this.state.name}!
+        </span>
+    }
+    click(){
+      this.setState({ name: 'Clicked' });
+    }
+  }
+
+  ReactDOM.render(<MySpan/>, document.getElementById('container'));
+</script>
+</body>
+</html>
