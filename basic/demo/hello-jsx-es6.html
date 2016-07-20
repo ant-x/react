@@ -16,7 +16,7 @@
       this.state = { name: 'MySpan' };
     }
     render() {
-      return <span onClick={ this.click } >
+      return <span onClick={ this.click.bind(this) } >
           Hello {this.state.name}!
         </span>
     }
